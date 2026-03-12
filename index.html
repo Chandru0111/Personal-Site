@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chandru | Achievement Portfolio</title>
+    <meta
+      name="description"
+      content="A premium achievement portfolio built for recruiters and hiring managers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#home">Chandru</a>
+      <nav>
+        <a href="#achievements">Achievements</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="openFormButton" class="button button-primary">Add Achievement</button>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Achievement Portfolio</p>
+          <h1>Evidence-driven profile for serious hiring decisions.</h1>
+          <p class="lead">
+            I ship measurable outcomes. This page showcases verified milestones, wins, and impact
+            with links and context for quick recruiter review.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#achievements">View Achievements</a>
+            <a class="button button-ghost" href="#contact">Hire Me</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2>Snapshot</h2>
+          <ul>
+            <li><span id="totalAchievements">0</span> total achievements</li>
+            <li><span id="totalCategories">0</span> categories covered</li>
+            <li><span id="latestYear">-</span> latest milestone year</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="achievements" class="section">
+        <div class="section-head">
+          <h2>Highlighted Achievements</h2>
+          <div id="categoryFilters" class="chips"></div>
+        </div>
+        <div id="achievementGrid" class="achievement-grid"></div>
+      </section>
+
+      <section id="proof" class="section">
+        <div class="proof-panel">
+          <h2>How This Helps Hirers</h2>
+          <p>
+            Every entry is structured for fast verification: what was done, where it happened, when
+            it happened, and supporting links.
+          </p>
+          <ul>
+            <li>Clear timeline and business relevance</li>
+            <li>External links for validation</li>
+            <li>Organized categories for role matching</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Open to Opportunities</h2>
+        <p>
+          Reach me at
+          <a href="mailto:ja0003sh@e.ntu.edu.sg">ja0003sh@e.ntu.edu.sg</a>
+          or connect on
+          <a
+            href="https://www.linkedin.com/in/chandraprakash-jayachandran-964651381"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >.
+        </p>
+      </section>
+    </main>
+
+    <dialog id="achievementDialog">
+      <form id="achievementForm" method="dialog" class="dialog-form">
+        <h3>Add Achievement</h3>
+        <label>
+          Title
+          <input name="title" required placeholder="Hackathon Winner" />
+        </label>
+        <label>
+          Organization
+          <input name="organization" required placeholder="ABC Tech Fest" />
+        </label>
+        <label>
+          Date
+          <input name="date" type="month" required />
+        </label>
+        <label>
+          Category
+          <input name="category" required placeholder="Leadership / Development / Academics" />
+        </label>
+        <label>
+          Impact
+          <textarea
+            name="impact"
+            required
+            placeholder="What outcome did this achievement drive?"
+          ></textarea>
+        </label>
+        <label>
+          Proof Link (optional)
+          <input name="proof" type="url" placeholder="https://..." />
+        </label>
+        <div class="dialog-actions">
+          <button type="button" id="closeDialogButton" class="button button-ghost">Cancel</button>
+          <button type="submit" class="button button-primary">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <template id="achievementTemplate">
+      <article class="achievement-card">
+        <div class="achievement-top">
+          <p class="achievement-date"></p>
+          <p class="achievement-category"></p>
+        </div>
+        <h3 class="achievement-title"></h3>
+        <p class="achievement-org"></p>
+        <p class="achievement-impact"></p>
+        <a class="achievement-proof" target="_blank" rel="noreferrer">View proof</a>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
